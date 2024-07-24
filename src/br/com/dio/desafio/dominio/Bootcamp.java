@@ -1,10 +1,7 @@
 package br.com.dio.desafio.dominio;
 
 import java.time.LocalDate;
-import java.util.HashSet;
-import java.util.LinkedHashSet;
-import java.util.Objects;
-import java.util.Set;
+import java.util.*;
 
 public class Bootcamp {
     private String nome;
@@ -53,6 +50,23 @@ public class Bootcamp {
 
     public void setConteudos(Set<Conteudo> conteudos) {
         this.conteudos = conteudos;
+    }
+
+    // Ordenar inscritos no bootcamp pelo nome de forma alfabética
+
+    public List<Dev> ordenarPorNome () {
+        List<Dev> ordenarPorNome = new ArrayList<>(devsInscritos);
+        ordenarPorNome.sort(Comparator.comparing(Dev::getNome));
+        return ordenarPorNome;
+    }
+
+    // Método para exibir os devs inscritos pelo nome
+    public void exibirOrdenadoPorNome() {
+        List<Dev> contasOrdenadas = ordenarPorNome(); // Utilize a lista ordenada
+        System.out.println("============ DEVS INSCRITOS NO BOOTCAMP: " + this.getNome() + " =================");
+        for (Dev dev : contasOrdenadas) {
+            System.out.println("Dev inscrito: " + dev.getNome());
+        }
     }
 
     @Override

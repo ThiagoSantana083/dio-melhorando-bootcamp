@@ -72,6 +72,25 @@ public class Main {
         System.out.println("Conteúdos Concluidos Abraão:" + devAbraao.getConteudosConcluidos());
         System.out.println("XP:" + devAbraao.calcularTotalXp());
 
+        System.out.println("-------");
+
+        Dev devZibani = new Dev();
+        devZibani.setNome("Zibani");
+        devZibani.inscreverBootcamp(bootcamp);
+        System.out.println("Conteúdos Inscritos Zibani:" + devZibani.getConteudosInscritos());
+        devZibani.progredir();
+        devZibani.progredir();
+        devZibani.progredir();
+        System.out.println("-");
+        System.out.println("Conteúdos Inscritos Zibani:" + devZibani.getConteudosInscritos());
+        System.out.println("Conteúdos Concluidos Zibani:" + devZibani.getConteudosConcluidos());
+        System.out.println("XP:" + devZibani.calcularTotalXp());
+
+
+        // Ordenando o bootcamp
+        bootcamp.ordenarPorNome();
+        bootcamp.exibirOrdenadoPorNome();
+
     }
 
 }
